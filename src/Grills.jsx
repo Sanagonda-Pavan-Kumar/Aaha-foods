@@ -2,11 +2,10 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
-import {Header} from './Header'; 
-import Sider from './Sider'; 
-import { Swipers } from './Swipers';
+import Sider2 from './Sider2'; 
 import { Typography } from '@mui/material';
 import Footers from './Footers';
+import MainSlides from './MainSlides';
 
 const drawerWidth = 300;
 
@@ -19,7 +18,7 @@ const theme = createTheme({
 export const Grills = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
+   
       <Box sx={{ display: 'flex' }}>
         <AppBar
           position="fixed"
@@ -29,10 +28,12 @@ export const Grills = () => {
             ml: `${drawerWidth}px`,
           }}
         />
-        <Sider />
+        <Sider2 />
       </Box>
       <Box sx={{ ml: `${drawerWidth}px` }}>
-     <Swipers/>
+      <MainSlides/></Box>
+      <Box sx={{ ml: `${drawerWidth}px` }}>
+   
      <Box>
      <Box
   component="main"
@@ -98,6 +99,9 @@ At Aha Grills and Kebabs, we're committed to providing exceptional quality, unfo
      </Box>
      <Footers/>
       </Box>
+<Box >
+
+</Box>
     </ThemeProvider>
   );
 };

@@ -1,23 +1,21 @@
 import React from "react";
 import { Typography, Box, AppBar } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import img4 from "./assets/badrakali.jpg";
-import Sider from "./Sider";
-import { Header } from "./Header";
-import Footers from "./Footers";
+import img4 from "./assets/badrakali.jpg"; 
+import Footers from "./Footers"; 
+import Sider2 from "./Sider2";
 
 const drawerWidth = 300;
 
 const theme = createTheme({
-  typography: {
+  typography: { 
     fontFamily: "Proxima Nova",
   },
 });
 
-function AboutUs() {
+const AboutUsGrills = () => {
   return (
     <ThemeProvider theme={theme}>
-        {/* <Header/> */}
       <Box sx={{ display: "flex" }}>
         <AppBar
           position="fixed"
@@ -27,7 +25,7 @@ function AboutUs() {
             ml: `${drawerWidth}px`,
           }}
         />
-        <Sider />
+        <Sider2 />
       </Box>
       <Box sx={{ ml: `${drawerWidth}px` }}>
         <Box
@@ -38,7 +36,7 @@ function AboutUs() {
         >
           <img
             src={img4}
-            alt="Warangal"
+            alt="Badrakali"
             style={{
               width: "100%",
               height: "70vh",
@@ -55,7 +53,6 @@ function AboutUs() {
               top: "40%",
               left: "50%",
               transform: "translate(-20%, -20%)",
-
               zIndex: 2,
             }}
           >
@@ -84,17 +81,6 @@ function AboutUs() {
           >
             About Us
           </Typography>
-          {/* <Typography  variant="h4" 
-  component="h1" 
-  fontWeight="bold" 
-  fontFamily="Proxima Nova"
-  
-  sx={{
-    textAlign:'center',
-   pt:'20px'
-  }}>
-       The Aha-Food Corps 
-       </Typography> */}
 
           <Typography
             sx={{
@@ -106,17 +92,7 @@ function AboutUs() {
               px: "20px",
             }}
           >
-            Welcome to Aha Tiffins, where we serve delicious and authentic food
-            made with love and care, blending tradition with a modern twist to
-            create a delightful culinary experience. Our specialties include
-            South Indian tiffins and meals featuring freshly prepared dosa,
-            idli, vada, pongal, and traditional meals paired with flavorful
-            chutneys and aromatic sambar. For street food lovers, our Chat
-            Corner offers a variety of crispy, tangy, and spicy delights. Tea
-            enthusiasts can savor the rich, creamy Irani tea made with pure
-            buffalo milk, while our Juice & Milkshake Bar provides a refreshing
-            selection of fresh fruit juices, milkshakes, and smoothies. Join us
-            for a taste of tradition and innovation crafted to perfection!
+            Welcome to Aha Grills and Kebabs, where we serve delicious and authentic food made with love and care, blending tradition with a modern twist to create a delightful culinary experience. Our specialties include a variety of grilled dishes, kebabs, and traditional meals paired with flavorful chutneys and aromatic sauces. Join us for a taste of tradition and innovation crafted to perfection!
           </Typography>
         </Box>
 
@@ -131,19 +107,8 @@ function AboutUs() {
               pt: "60px",
             }}
           >
-            Why Choose Us ?
+            Why Choose Us?
           </Typography>
-          {/* <Typography  variant="h4" 
-  component="h1" 
-  fontWeight="bold" 
-  fontFamily="Proxima Nova"
-  
-  sx={{
-    textAlign:'center',
-   pt:'20px'
-  }}>
-       The Aha-Food Corps 
-       </Typography> */}
 
           <Typography
             sx={{
@@ -155,24 +120,13 @@ function AboutUs() {
               px: "20px",
             }}
           >
-            Welcome to Aha Tiffins, where we serve delicious and authentic food
-            made with love and care, blending tradition with a modern twist to
-            create a delightful culinary experience. Our specialties include
-            South Indian tiffins and meals featuring freshly prepared dosa,
-            idli, vada, pongal, and traditional meals paired with flavorful
-            chutneys and aromatic sambar. For street food lovers, our Chat
-            Corner offers a variety of crispy, tangy, and spicy delights. Tea
-            enthusiasts can savor the rich, creamy Irani tea made with pure
-            buffalo milk, while our Juice & Milkshake Bar provides a refreshing
-            selection of fresh fruit juices, milkshakes, and smoothies. Join us
-            for a taste of tradition and innovation crafted to perfection!
+            At Aha Grills and Kebabs, we pride ourselves on using the freshest ingredients and authentic recipes to deliver an unforgettable dining experience. Our menu features a wide range of options, from smoky tandoori delights to mouthwatering kebabs, ensuring that there is something for everyone. Experience the best of Indian cuisine with us!
           </Typography>
-         
         </Box>
-        <Footers/>
+        <Footers />
       </Box>
     </ThemeProvider>
   );
-}
+};
 
-export default AboutUs;
+export default AboutUsGrills;

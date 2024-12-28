@@ -1,16 +1,15 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react'; 
-import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'; 
-import { Typography } from '@mui/material'; 
+import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper and SwiperSlide
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'; // Import Swiper modules
+import { Typography } from '@mui/material'; // Import Typography from MUI
 import img4 from './assets/k1.jpg'; 
 import wada from './assets/wada.jpg';
 import dosa from './assets/dosa.jpg';
 import idly from './assets/idly.jpg';
 
-export const Swipers = () => {
+const MainSlides = () => {
   return (
     <div>
-       
       <Swiper
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={0}
@@ -51,15 +50,13 @@ export const Swipers = () => {
                 zIndex: 0,
               }}
             />
-            <div
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 2,
-              }}
-            >
+            <div style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 2,
+            }}>
               <Typography sx={{ fontSize: '6rem', fontWeight: 'bold', color: 'grey' }}>
                 Welcome!
               </Typography>
@@ -67,7 +64,7 @@ export const Swipers = () => {
                 To
               </Typography>
               <Typography sx={{ fontSize: '3rem', fontFamily: 'cursive', color: 'rgb(255, 170, 0)', px: '70px' }}>
-                Aha Grills & Kebabs
+                Aha-Foods
               </Typography>
             </div>
           </SwiperSlide>
@@ -152,7 +149,8 @@ export const Swipers = () => {
           </SwiperSlide>
         </div>
       </Swiper>
-    
     </div>
   );
-};
+}
+
+export default MainSlides;

@@ -60,7 +60,7 @@ import Footers from './Footers';
       
       <ThemeProvider theme={theme}>
         <CssBaseline />
-       <Header/>
+     
         <Box sx={{ display: 'flex', }}>
           
 

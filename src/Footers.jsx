@@ -25,12 +25,12 @@ const Footers = () => {
             ml: `${drawerWidth}px`,
           }}
         />
-        <Sider />
+      
       </Box>
       <Box >
         <Box sx={{ backgroundColor: 'black', display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
           <Typography sx={{ color: 'white' }}>
-            Copyright © 2024 Aha-Tiffins. All Rights Reserved
+            Copyright © 2024 Aha-Foods. All Rights Reserved
           </Typography>
           <Box sx={{px:'20px'}}>
           <InstagramIcon sx={{ color: 'white' , marginRight: 2}} />

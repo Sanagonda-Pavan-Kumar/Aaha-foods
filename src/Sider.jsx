@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -13,8 +14,10 @@ import Divider from '@mui/material/Divider';
 import { useNavigate } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Collapse from '@mui/material/Collapse';
-import Button from '@mui/material/Button';
 import logo from './assets/Aha-png-Eng.png';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -30,48 +33,24 @@ const theme = createTheme({
 
 function Sider() {
   const [openMenu, setOpenMenu] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
   const navigate = useNavigate();
 
   const handleMenuClick = () => {
     setOpenMenu((prev) => !prev);
   };
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
-        {showHeader && (
-          <AppBar
-            position="fixed"
-            sx={{
-              width: `calc(100% - ${drawerWidth}px)`,
-              ml: `${drawerWidth}px`,
-              backgroundColor: 'transparent',
-              boxShadow: 'none',
-            }}
-          >
-           
-          </AppBar>
-        )}
+        <AppBar
+          position="fixed"
+
+          sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` , backgroundColor: 'transparent', // Ensure no background color
+          boxShadow: 'none', }}
+        >
+          <Toolbar />
+        </AppBar>
 
         <Drawer
           sx={{
@@ -86,7 +65,8 @@ function Sider() {
           variant="permanent"
           anchor="left"
         >
-          <Box sx={{ display: 'flex', p: 2 }}>
+          <Toolbar />
+          <Box sx={{ display: 'flex' }}>
             <img src={logo} alt="aha tiffins" style={{ width: '270px' }} />
           </Box>
           <Box sx={{ px: '15px', py: '20px' }}>
@@ -143,7 +123,7 @@ function Sider() {
               <List sx={{ pl: 0 }}>
                 <ListItem key="Menu Card" disablePadding>
                   <ListItemButton
-                    onClick={() => navigate('/home2')}
+                      onClick={() => navigate('/home2')}
                     sx={{
                       px: 8,
                       justifyContent: 'center',
@@ -159,7 +139,7 @@ function Sider() {
 
                 <ListItem key="Tiffins " disablePadding>
                   <ListItemButton
-                    onClick={() => navigate('/Menu')}
+                     onClick={() => navigate('/Menu')}
                     sx={{
                       px: 8,
                       justifyContent: 'center',
@@ -176,7 +156,7 @@ function Sider() {
                 <ListItem key="Tiffins" disablePadding>
                   <ListItemButton
                     onClick={() => {
-                      console.log("item3");
+                      navigate('/Meals')
                     }}
                     sx={{
                       px: 8,
@@ -187,7 +167,7 @@ function Sider() {
                       '&:hover': { color: '#ff9d2e' },
                     }}
                   >
-                    <ListItemText primary="item3" />
+                    <ListItemText primary="Meals & Rice Specials" />
                   </ListItemButton>
                 </ListItem>
               </List>
@@ -213,9 +193,19 @@ function Sider() {
           <Box sx={{ px: '15px', py: '20px' }}>
             <Divider sx={{ borderColor: 'white' }} />
           </Box>
+          <Box sx={{ textAlign: 'center', color: 'white', py: 2 }}>
+            <Box sx={{ mb: 1 }}>
+              <FacebookIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer' }} />
+              <TwitterIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer' }} />
+              <InstagramIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer' }} />
+            </Box>
+            <Box sx={{ fontSize: '14px', lineHeight: '1.5' }}>
+              <p>Copyright © 2024 Aha-Foods .</p>
+              <p>All Rights Reserved</p>
+              
+            </Box>
+          </Box>
         </Drawer>
-
-      
       </Box>
     </ThemeProvider>
   );

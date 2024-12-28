@@ -1,34 +1,10 @@
-
-
-
-
-
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import logo from './assets/Aha-png-Eng.png';
-import img1 from './assets/laknavaram-lake.jpg';
-import img2 from './assets/ra.jpeg';
-import img3 from './assets/Ramappa Temple.jpeg';
-import img4 from './assets/k1.jpg'; 
-import wada from './assets/wada.jpg';
-import dosa from './assets/dosa.jpg';
 import idly from './assets/idly.jpg';
-import menu1 from './assets/menu1.jpg';
-import menu2 from './assets/menu2.jpg';
-import menu3 from './assets/menu3.jpg';
-import orange from './assets/orange.png';
-import milkshake from './assets/milkshake.png';
 import gheekaramidly from './assets/gheekaramidly.jpg';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -44,7 +20,6 @@ import sambaridly from './assets/sambaridly.jpg';
 import buttonidly from './assets/buttonidly.jpeg';
 import thatteidly from './assets/thatteidly.png';
 import tawaidly from './assets/tawaidly.jpeg';
-import wada2piece from './assets/wada2piece.jpeg';
 import wada2p from './assets/wada2p.jpg';
 import singlewada from './assets/singlewada.jpg';
 import singleidlywada from './assets/singleidlywada.png';
@@ -61,16 +36,15 @@ import masaladosa from './assets/masalaadosa.jpg';
 import oniondosa from './assets/oniondosa.jpg';
 import onionmasaladosa from './assets/onionmasaladosa.jpg';
 import pannerdosa from './assets/pannerdosa.jpg';
-import butterdosa from './assets/butterdosa.jpg';
 import ravvadosa from './assets/ravvadosa.jpg';
 import ravvamasaladosa from './assets/ravvamasaladosa.jpg';
 import pesarattu from './assets/pesarattu.jpg';
 import onionpesarattu from './assets/onionpesarattu.jpg';
 import masalapesarattu from './assets/masalapesarattu.jpg';
+import Footers from './Footers';
 const { Meta } = Card;
 
 import Sider from './Sider';
-import { Header } from './Header';
 
 const drawerWidth = 300;
 
@@ -86,10 +60,9 @@ function Menu() {
     
     <ThemeProvider theme={theme}>
       <CssBaseline />
-     
       <Box sx={{ display: 'flex' }}>
         <AppBar
-        
+          position="fixed"
           boxShadow= 'none'
           sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
         />
@@ -112,7 +85,6 @@ sx={{
   ml: `${drawerWidth}px`, 
   px: 4,
   pt: 5,
-  
 }}
 >
 <Typography 
@@ -155,16 +127,18 @@ sx={{
     }}
   >
     <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      slidesPerView={3}
-      spaceBetween={20} 
-      navigation
-    
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false,
-      }}
-    >
+    modules={[Navigation, Pagination, Autoplay]}
+    slidesPerView={3}
+    spaceBetween={0} 
+    loop={true}
+    navigation
+    autoplay={{
+      delay: 1, 
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true, 
+    }}
+    speed={3000} 
+  >
       <SwiperSlide>
         <Card
           hoverable
@@ -297,272 +271,6 @@ sx={{
  
 }}
 ><Typography sx={{textAlign:'center',fontFamily:'',fontWeight:'bold',fontSize:'25px'}}>
-    Wada Recipies</Typography></Box>
-<Box
-    sx={{
-      pb: "60px",
-      px: "30px",
-      marginLeft: `${drawerWidth}px`,
-    }}
-  >
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-     
-      spaceBetween={20} 
-      navigation
-      breakpoints={{
-        0: {
-          slidesPerView: 1, 
-        },
-        768: {
-          slidesPerView: 3, 
-        },
-      }}
-    
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false,
-      }}
-    >
-      
-    
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 240,
-          }}
-          cover={<img alt="Ragi Idly" src={singlewada} />}
-        >
-          <Meta
-            title="Single Wada"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 220,
-          }}
-          cover={<img alt="Idly Wada" src={singleidlywada} />}
-        >
-          <Meta
-            title="Idly Wada"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 210,
-          }}
-          cover={<img alt="Button Idly" src={idlywada} />}
-        >
-          <Meta
-            title="2-piece Idly ,Wada"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 205,
-          }}
-          cover={<img alt="Ghee Karam Idly" src={sambarwada} />}
-        >
-          <Meta
-            title="Sambar-Wada"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 210,
-            
-          }}
-          cover={<img alt="Wada" src={wada2p}  />}
-        >
-          <Meta
-            title="2-piece Wada"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-     
-    </Swiper>
-  </Box>
-  <Box
-sx={{
-  px:'10px',
-  marginLeft: `${drawerWidth}px`, 
-  alignItems: 'center',
- pt:'10px',
- pb:'20px',
- 
-}}
-><Typography sx={{textAlign:'center',fontFamily:'',fontWeight:'bold',fontSize:'25px'}}>
-    Bonda & Others </Typography></Box>
-<Box
-    sx={{
-      pb: "60px",
-      px: "30px",
-      marginLeft: `${drawerWidth}px`,
-    }}
-  >
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      slidesPerView={3}
-      spaceBetween={20} 
-      navigation
-    
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false,
-      }}
-    >
-      
-    
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 210,
-          }}
-          cover={<img alt="Poori" src={poori3p} />}
-        >
-          <Meta
-            title="Poori 3-pieces"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 220,
-          }}
-          cover={<img alt="poori" src={poori2p} />}
-        >
-          <Meta
-            title="Poori 2-pieces"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 220,
-          }}
-          cover={<img alt="Bonda " src={bonda4p} />}
-        >
-          <Meta
-            title="4-piece Bonda"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 220,
-          }}
-          cover={<img alt="Bonda" src={bonda2p} />}
-        >
-          <Meta
-            title="2-piece Bonda"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 230,
-            
-          }}
-          cover={<img alt="upma" src={upma}  />}
-        >
-          <Meta
-            title="Upma"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-      <SwiperSlide>
-        <Card
-          hoverable
-          style={{
-            width: 210,
-            
-          }}
-          cover={<img alt="pongal" src={pongal}  />}
-        >
-          <Meta
-            title="Pongal"
-            style={{
-              textAlign: "center",
-              fontFamily: "cursive",
-            }}
-          />
-        </Card>
-      </SwiperSlide>
-    </Swiper>
-  </Box>
-
-  <Box
-sx={{
-  px:'10px',
-  marginLeft: `${drawerWidth}px`, 
-  alignItems: 'center',
- pt:'10px',
- pb:'20px',
- 
-}}
-><Typography sx={{textAlign:'center',fontFamily:'',fontWeight:'bold',fontSize:'25px'}}>
     Dosa Recipies </Typography></Box>
 <Box
     sx={{
@@ -572,16 +280,18 @@ sx={{
     }}
   >
     <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      slidesPerView={3}
-      spaceBetween={20} 
-      navigation
-    
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false,
-      }}
-    >
+    modules={[Navigation, Pagination, Autoplay]}
+    slidesPerView={3}
+    spaceBetween={0} 
+    loop={true}
+    navigation
+    autoplay={{
+      delay: 1, 
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true, 
+    }}
+    speed={3000} 
+  >
       
     
       <SwiperSlide>
@@ -765,9 +475,276 @@ sx={{
     </Swiper>
   </Box>
   
+  
+  <Box
+  sx={{
+    px: '10px',
+    marginLeft: `${drawerWidth}px`,
+    alignItems: 'center',
+    pt: '10px',
+    pb: '20px',
+  }}
+>
+  <Typography sx={{ textAlign: 'center', fontFamily: '', fontWeight: 'bold', fontSize: '25px' }}>
+    Bonda & Others
+  </Typography>
+</Box>
+<Box
+  sx={{
+    pb: '60px',
+    px: '30px',
+    marginLeft: `${drawerWidth}px`,
+  }}
+>
+  <Swiper
+    modules={[Navigation, Pagination, Autoplay]}
+    slidesPerView={3}
+    spaceBetween={0} 
+    loop={true}
+    navigation
+    autoplay={{
+      delay: 1, 
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true, 
+    }}
+    speed={3000} 
+  >
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 210,
+        }}
+        cover={<img alt="Poori" src={poori3p} />}
+      >
+        <Meta
+          title="Poori 3-pieces"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 220,
+        }}
+        cover={<img alt="poori" src={poori2p} />}
+      >
+        <Meta
+          title="Poori 2-pieces"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 220,
+        }}
+        cover={<img alt="Bonda " src={bonda4p} />}
+      >
+        <Meta
+          title="4-piece Bonda"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 220,
+        }}
+        cover={<img alt="Bonda" src={bonda2p} />}
+      >
+        <Meta
+          title="2-piece Bonda"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 230,
+        }}
+        cover={<img alt="upma" src={upma} />}
+      >
+        <Meta
+          title="Upma"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 210,
+        }}
+        cover={<img alt="pongal" src={pongal} />}
+      >
+        <Meta
+          title="Pongal"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+  </Swiper>
+</Box>
+<Box
+  sx={{
+    px: '10px',
+    marginLeft: `${drawerWidth}px`,
+    alignItems: 'center',
+    pt: '10px',
+    pb: '20px',
+  }}
+>
+  <Typography sx={{ textAlign: 'center', fontFamily: '', fontWeight: 'bold', fontSize: '25px' }}>
+    Wada Recipies
+  </Typography>
+</Box>
+<Box
+  sx={{
+    pb: '60px',
+    px: '30px',
+    marginLeft: `${drawerWidth}px`,
+  }}
+>
+  <Swiper
+    modules={[Navigation, Pagination, Autoplay]}
+    spaceBetween={0} 
+    loop={true} 
+    autoplay={{
+      delay: 1, 
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true, 
+    }}
+    speed={3000} 
+    navigation
+    breakpoints={{
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    }}
+  >
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 240,
+        }}
+        cover={<img alt="Ragi Idly" src={singlewada} />}
+      >
+        <Meta
+          title="Single Wada"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 220,
+        }}
+        cover={<img alt="Idly Wada" src={singleidlywada} />}
+      >
+        <Meta
+          title="Idly Wada"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 210,
+        }}
+        cover={<img alt="Button Idly" src={idlywada} />}
+      >
+        <Meta
+          title="2-piece Idly, Wada"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 205,
+        }}
+        cover={<img alt="Ghee Karam Idly" src={sambarwada} />}
+      >
+        <Meta
+          title="Sambar-Wada"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+      <Card
+        hoverable
+        style={{
+          width: 210,
+        }}
+        cover={<img alt="Wada" src={wada2p} />}
+      >
+        <Meta
+          title="2-piece Wada"
+          style={{
+            textAlign: 'center',
+            fontFamily: 'cursive',
+          }}
+        />
+      </Card>
+    </SwiperSlide>
+  </Swiper>
+</Box>
 </Box>
 
-
+<Box sx={{ marginLeft: `${drawerWidth}px` }}>
+        <Footers />
+      </Box>  
 
     </ThemeProvider>
 
