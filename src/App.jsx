@@ -35,6 +35,8 @@ import { Typography } from '@mui/material';
 import { Home1 } from './Home1';
 import { Home2 } from './Home2';
 import Sider from './Sider';
+import { Header } from './Header';
+import Footers from './Footers';
 
 
 
@@ -58,153 +60,15 @@ import Sider from './Sider';
       
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box sx={{ display: 'flex' }}>
+       <Header/>
+        <Box sx={{ display: 'flex', }}>
           
 
-        {/* <Drawer
-  sx={{
-    width: drawerWidth,
-    flexShrink: 0,
-    '& .MuiDrawer-paper': {
-      width: drawerWidth,
-      boxSizing: 'border-box',
-      backgroundColor: 'rgba(0, 0, 0, 0.9)',
-    },
-  }}
-  variant="permanent"
-  anchor="left"
->
-  <Toolbar />
-  <Box sx={{ display: 'flex' }}>
-    <img src={logo} alt="aha tiffins" style={{ width: '270px' }} />
-  </Box>
-  <Box sx={{ px: '15px', py: '20px' }}>
-    <Divider sx={{ borderColor: 'white' }} />
-  </Box>
-
-  <List sx={{ pt: '10px' }}>
-    {['HOME', 'ABOUT US'].map((text) => (
-      <ListItem key={text} disablePadding>
-        <ListItemButton
-          onClick={() => {
-            if (text === 'HOME') {
-              window.location.href = '/';
-              window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-              });
-            } else if (text === 'ABOUT US') {
-              navigate('/aboutus');
-            }
-          }}
-          sx={{
-            px: 8,
-            justifyContent: 'center',
-            textAlign: 'center',
-            color: 'lightgrey',
-            fontWeight: 'bold',
-            '&:hover': { color: '#ff9d2e' },
-          }}
-        >
-          <ListItemText primary={text} />
-        </ListItemButton>
-      </ListItem>
-    ))}
-
-    <ListItem disablePadding>
-      <ListItemButton
-        onClick={handleMenuClick}
-        sx={{
-          px: 8,
-          justifyContent: 'center',
-          textAlign: 'center',
-          color: 'lightgrey',
-          fontWeight: 'bold',
-          '&:hover': { color: '#ff9d2e' },
-        }}
-      >
-        <ListItemText primary="MENU" />
-        <ArrowDropDownIcon sx={{ color: 'lightgrey' }} />
-      </ListItemButton>
-    </ListItem>
-
-    <Collapse in={openMenu} timeout="auto" unmountOnExit>
-      <List sx={{ pl: 0 }}>
-        <ListItem key="Menu Card" disablePadding>
-          <ListItemButton
-              onClick={() => navigate('/home2')}
-            sx={{
-              px: 8,
-              justifyContent: 'center',
-              textAlign: 'center',
-              color: 'lightgrey',
-              fontWeight: 'bold',
-              '&:hover': { color: '#ff9d2e' },
-            }}
-          >
-            <ListItemText primary="Menu Card" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem key="item2" disablePadding>
-          <ListItemButton
-           onClick={() => navigate('/Menu')}
-            sx={{
-              px: 8,
-              justifyContent: 'center',
-              textAlign: 'center',
-              color: 'lightgrey',
-              fontWeight: 'bold',
-              '&:hover': { color: '#ff9d2e' },
-            }}
-          >
-            <ListItemText primary="Tiffins Menu" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem key="item3" disablePadding>
-          <ListItemButton
-          
-            sx={{
-              px: 8,
-              justifyContent: 'center',
-              textAlign: 'center',
-              color: 'lightgrey',
-              fontWeight: 'bold',
-              '&:hover': { color: '#ff9d2e' },
-            }}
-          >
-            <ListItemText primary="MilkShakes Menu" />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Collapse>
-
-    <ListItem disablePadding>
-      <ListItemButton
-        onClick={() => navigate('/contactus')}
-        sx={{
-          px: 8,
-          justifyContent: 'center',
-          textAlign: 'center',
-          color: 'lightgrey',
-          fontWeight: 'bold',
-          '&:hover': { color: '#ff9d2e' },
-        }}
-      >
-        <ListItemText primary="CONTACT US" />
-      </ListItemButton>
-    </ListItem>
-  </List>
-
-  <Box sx={{ px: '15px', py: '20px' }}>
-    <Divider sx={{ borderColor: 'white' }} />
-  </Box>
-</Drawer> */}
+     
 
 <Sider/>
 
-          <Swiper
+           <Swiper
   modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
   spaceBetween={0}
   slidesPerView={1}
@@ -218,6 +82,7 @@ import Sider from './Sider';
   speed={1000}
   onSwiper={(swiper) => console.log(swiper)}
   onSlideChange={() => console.log('slide change')}
+  
 >
 <div>
   <SwiperSlide>
@@ -351,9 +216,6 @@ import Sider from './Sider';
 
  
 </Swiper>
-  
-
-
         </Box>
    
       <Home1/>
@@ -361,8 +223,10 @@ import Sider from './Sider';
        <Box>
         <Home2/>
        </Box>
-
-
+       <Box sx={{ ml: `${drawerWidth}px`,}}>
+          <Footers/>
+        </Box>
+       
       </ThemeProvider>
 
       

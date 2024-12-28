@@ -11,12 +11,14 @@ import menu1 from './assets/menu1.jpg';
   import 'swiper/css/pagination';
   import 'swiper/css/scrollbar';
 import Sider from './Sider';
+import { Header } from './Header';
 
   const drawerWidth = 300;
 export const Home2 = () => {
   return (
     <div>
         <Sider/>
+      
         <Box
   component="main"
  sx={{backgroundColor:'RGB(231,216,201,0.5)', pb:'40px'}}
@@ -29,6 +31,7 @@ export const Home2 = () => {
     ml: `${drawerWidth}px`, 
     px: 4,
     py: 5,
+   
   }}
 >
   <Typography 

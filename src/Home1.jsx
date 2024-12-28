@@ -37,7 +37,7 @@ export const Home1 = () => {
         bottom: -4, 
         height: "2px",
         width: "100%",
-        backgroundColor: "lightgrey",
+        backgroundColor: "orange",
       },
     }}
   >

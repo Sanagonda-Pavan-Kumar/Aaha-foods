@@ -70,6 +70,7 @@ import masalapesarattu from './assets/masalapesarattu.jpg';
 const { Meta } = Card;
 
 import Sider from './Sider';
+import { Header } from './Header';
 
 const drawerWidth = 300;
 
@@ -85,9 +86,10 @@ function Menu() {
     
     <ThemeProvider theme={theme}>
       <CssBaseline />
+     
       <Box sx={{ display: 'flex' }}>
         <AppBar
-          position="fixed"
+        
           boxShadow= 'none'
           sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
         />
@@ -110,6 +112,7 @@ sx={{
   ml: `${drawerWidth}px`, 
   px: 4,
   pt: 5,
+  
 }}
 >
 <Typography 

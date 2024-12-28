@@ -3,6 +3,8 @@ import { Typography, Box, AppBar } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import img4 from "./assets/badrakali.jpg";
 import Sider from "./Sider";
+import { Header } from "./Header";
+import Footers from "./Footers";
 
 const drawerWidth = 300;
 
@@ -15,6 +17,7 @@ const theme = createTheme({
 function AboutUs() {
   return (
     <ThemeProvider theme={theme}>
+        <Header/>
       <Box sx={{ display: "flex" }}>
         <AppBar
           position="fixed"
@@ -166,6 +169,7 @@ function AboutUs() {
           </Typography>
          
         </Box>
+        <Footers/>
       </Box>
     </ThemeProvider>
   );
