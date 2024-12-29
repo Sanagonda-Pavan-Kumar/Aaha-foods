@@ -1,107 +1,106 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Box, Grid, Typography, Button } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react'; 
+import { Autoplay } from 'swiper/modules'; 
+import 'swiper/swiper-bundle.css'; 
+import dosa1 from './assets/dosa1.jpg';
+import kebab from './assets/kebab.jpg';
+import kebabs1 from './assets/kebabs1.jpg';
+import idly12 from './assets/idly12.jpg'; 
+import dosa3 from './assets/wada12.jpg'; 
+import fullbird from './assets/fullbird.jpg';
+import vegbiryani1 from './assets/vegbiryani1.jpg';
+import grillleg from './assets/grillleg.jpg';
 
 const AhaFoods = () => {
   const navigate = useNavigate();
 
-  const containerStyle = {
-    minHeight: '100vh',
-    background: 'linear-gradient(to bottom right, #FFF4E5, #FFD9D9)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  };
-
-  const cardStyle = {
-    width: '100%',
-    maxWidth: '400px',
-    padding: '20px',
-    textAlign: 'center',
-  };
-
-  const headingStyle = {
-    fontSize: '24px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-    color: '#CC5500',
-  };
-
-  const buttonStyle = {
-    width: '100%',
-    padding: '15px',
-    margin: '10px 0',
-    border: 'none',
-    borderRadius: '8px',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    color: 'white',
-    cursor: 'pointer',
-    transition: 'transform 0.3s, background-color 0.3s',
-  };
-
-  const buttonHoverStyle = (bgColor) => ({
-    backgroundColor: bgColor,
-    transform: 'scale(1.05)',
-  });
+  const cardData = [
+    {
+      title: 'Aha-Tiffins',
+      subtitle: 'South Indian Delicacies',
+      time: '7:00 AM - 12:00 PM',
+      images: [dosa1, idly12, dosa3], 
+      buttonText: 'View Menu',
+      navigateTo: '/App',
+    },
+    {
+      title: 'Aha-Grills & Kebabs',
+      subtitle: '',
+      time: '5:00 PM - 12:00 PM',
+      images: [kebab,fullbird , kebabs1], 
+      buttonText: 'View Menu',
+      navigateTo: '/Grills',
+    },
+    {
+      title: 'Aha Catering',
+      subtitle: 'For All Your Events',
+      images: [grillleg, dosa1, vegbiryani1], 
+      buttonText: 'View Services',
+      navigateTo: '/catering',
+    },
+  ];
 
   return (
-    <div style={containerStyle}>
-      <div style={cardStyle}>
-        <h1 style={headingStyle}>Welcome to Aha Foods</h1>
-        <button
-          onClick={() => navigate('/App')}
-          style={{
-            ...buttonStyle,
-            backgroundColor: '#FF6600',
-          }}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#E65C00';
-            e.target.style.transform = 'scale(1.05)';
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#FF6600';
-            e.target.style.transform = 'scale(1)';
-          }}
-        >
-          Aha-Tiffins
-        </button>
-        <button
-          onClick={() => navigate('/Grills')}
-          style={{
-            ...buttonStyle,
-            backgroundColor: '#CC0000',
-          }}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#990000';
-            e.target.style.transform = 'scale(1.05)';
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#CC0000';
-            e.target.style.transform = 'scale(1)';
-          }}
-        >
-          Aha Grills and Kebabs
-        </button>
-        <button
-          onClick={() => navigate('/aha-foods')}
-          style={{
-            ...buttonStyle,
-            backgroundColor: '#FFD700',
-            color: 'black',
-          }}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#FFC300';
-            e.target.style.transform = 'scale(1.05)';
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#FFD700';
-            e.target.style.transform = 'scale(1)';
-          }}
-        >
-          Aha Foods
-        </button>
-      </div>
-    </div>
+    <Box sx={{ flexGrow: 1, minHeight: '100vh', background: 'linear-gradient(to bottom right, #FFF4E5, #FFD9D9)', padding: 0 }}>
+      <Grid container spacing={0}>
+        {cardData.map((card, index) => (
+          <Grid item xs={12} sm={4} key={index}>
+            <Box sx={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={0}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+               
+                  disableOnInteraction: false,
+                }}
+                speed={1000} 
+                style={{ height: '100%' }} 
+                onMouseEnter={(swiper) => swiper.autoplay.stop()} 
+                onMouseLeave={(swiper) => swiper.autoplay.start()} 
+              >
+                {card.images.map((image, imgIndex) => (
+                  <SwiperSlide key={imgIndex}>
+                    <img
+                      src={image}
+                      alt={`${card.title} ${imgIndex}`}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        filter: 'brightness(0.7)',
+                      }}
+                    />
+                    <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', textAlign: 'center' }}>
+                      <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
+                        {card.title}
+                      </Typography>
+                      <Typography variant="subtitle1">{card.subtitle}</Typography>
+                      {card.time && <Typography variant="body2">{card.time}</Typography>}
+                      <Button
+                        variant="contained"
+                        sx={{
+                          marginTop: 2,
+                          backgroundColor: 'white',
+                          color: '#CC5500',
+                          borderRadius: '20px', 
+                        }}
+                        onClick={() => navigate(card.navigateTo)}
+                      >
+                        {card.buttonText}
+                      </Button>
+                    </Box>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
