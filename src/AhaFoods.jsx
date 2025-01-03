@@ -19,7 +19,7 @@ const AhaFoods = () => {
   const cardData = [
     {
       title: 'Aha-Tiffins',
-      subtitle: 'South Indian Delicacies',
+      subtitle: 'Good Food, Great Taste, Always',
       time: '7:00 AM - 12:00 PM',
       images: [dosa1, idly12, dosa3], 
       buttonText: 'View Menu',
@@ -27,7 +27,7 @@ const AhaFoods = () => {
     },
     {
       title: 'Aha-Grills & Kebabs',
-      subtitle: '',
+      subtitle: 'Good Food, Great Taste, Always',
       time: '5:00 PM - 12:00 PM',
       images: [kebab,fullbird , kebabs1], 
       buttonText: 'View Menu',
