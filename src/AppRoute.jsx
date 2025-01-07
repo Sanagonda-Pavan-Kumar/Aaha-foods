@@ -11,13 +11,17 @@ import { Grills } from './Grills';
 import AboutUsGrills from './AboutUsGrills';
 import GrillsMenu from './GrillsMenu';
 import ContactUs from './ContactUs';
+import ContactusGrills from './ContactusGrills';
+import { AhaCaterings } from './AhaCaterings';
 export default function AppRoute() {
   return (
     <Router>
       <Routes>
         <Route path="/App" element={<App />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/ahacaterings" element={<AhaCaterings />} />
         <Route path="/contactus" element={<ContactUs/>} />
+        <Route path="/contactusgrills" element={<ContactusGrills/>} />
         <Route path="/aboutusgrills" element={<AboutUsGrills />} />
         <Route path="/Menu" element={<Menu />} />
         <Route path='/Home2' element={<Home2/>}/>

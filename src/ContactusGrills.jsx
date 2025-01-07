@@ -3,17 +3,15 @@ import { Typography, Box, AppBar, Grid } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import img4 from "./assets/badrakali.jpg"; 
 import Footers from "./Footers"; 
-import Sider from "./Sider";
-
+import Sider2 from './Sider2';
 const drawerWidth = 300;
-
 const theme = createTheme({
   typography: { 
     fontFamily: "Proxima Nova",
-  },
+ },
 });
 
-const ContactUs = () => {
+const ContactusGrills = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -29,7 +27,7 @@ const ContactUs = () => {
               },
             }}
           />
-          <Sider />
+          <Sider2 />
         </Box>
         <Box sx={{  ml: {
               xs: 0,
@@ -111,7 +109,7 @@ const ContactUs = () => {
          
           <Box sx={{ padding: 4, textAlign: "center" }}>
             <Typography variant="h5" sx={{ fontWeight: 'bold', color: 'orange', fontFamily: 'cursive' }}>
-              Find Us Here
+              Find Us Here 
             </Typography>
             <hr />
             <iframe
@@ -131,4 +129,4 @@ const ContactUs = () => {
   );
 }
 
-export default ContactUs;
+export default ContactusGrills;

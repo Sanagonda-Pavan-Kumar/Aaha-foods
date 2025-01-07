@@ -9,7 +9,10 @@ export const Home1 = () => {
      <Box
   component="main"
   sx={{
-    ml: `${drawerWidth}px`,
+    ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    },
     px: 4,
     py: 4,
     display: "flex", 

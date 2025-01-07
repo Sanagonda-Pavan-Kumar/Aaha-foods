@@ -22,12 +22,18 @@ const AboutUsGrills = () => {
           elevation={0}
           sx={{
             width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            }, 
           }}
         />
         <Sider2 />
       </Box>
-      <Box sx={{ ml: `${drawerWidth}px` }}>
+      <Box sx={{ ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  },  }}>
         <Box
           sx={{
             justifyContent: "center",
@@ -58,7 +64,7 @@ const AboutUsGrills = () => {
           >
             <Typography
               sx={{
-                fontSize: "4.2rem",
+                fontSize: { xs: "2.5rem", sm: "3rem", md: "4.2rem" }, 
                 fontWeight: "bold",
                 color: "rgb(250, 250, 242)",
               }}
@@ -122,7 +128,7 @@ const AboutUsGrills = () => {
           >
             At Aha Grills and Kebabs, we pride ourselves on using the freshest ingredients and authentic recipes to deliver an unforgettable dining experience. Our menu features a wide range of options, from smoky tandoori delights to mouthwatering kebabs, ensuring that there is something for everyone. Experience the best of Indian cuisine with us!
           </Typography>
-        </Box>
+        </Box >
         <Footers />
       </Box>
     </ThemeProvider>

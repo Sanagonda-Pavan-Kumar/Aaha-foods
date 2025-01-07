@@ -3,7 +3,6 @@ import { Typography, Box, AppBar } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import img4 from "./assets/badrakali.jpg";
 import Sider from "./Sider";
-import { Header } from "./Header";
 import Footers from "./Footers";
 
 const drawerWidth = 300;
@@ -17,7 +16,6 @@ const theme = createTheme({
 function AboutUs() {
   return (
     <ThemeProvider theme={theme}>
-        {/* <Header/> */}
       <Box sx={{ display: "flex" }}>
         <AppBar
           position="fixed"
@@ -29,7 +27,16 @@ function AboutUs() {
         />
         <Sider />
       </Box>
-      <Box sx={{ ml: `${drawerWidth}px` }}>
+      <Box
+  sx={{
+    ml: {
+      xs: 0,          
+      md: `${drawerWidth}px`, 
+    },
+  }}
+>
+  
+
         <Box
           sx={{
             justifyContent: "center",
@@ -54,14 +61,13 @@ function AboutUs() {
               position: "absolute",
               top: "40%",
               left: "50%",
-              transform: "translate(-20%, -20%)",
-
+              transform: "translate(-50%, -50%)",
               zIndex: 2,
             }}
           >
             <Typography
               sx={{
-                fontSize: "4.2rem",
+                fontSize: { xs: "2.5rem", sm: "3rem", md: "4.2rem" }, 
                 fontWeight: "bold",
                 color: "rgb(250, 250, 242)",
               }}
@@ -79,7 +85,7 @@ function AboutUs() {
             color="#F27F0C"
             sx={{
               textAlign: "center",
-              pt: "60px",
+              pt: { xs: "30px", md: "60px" }, 
             }}
           >
             About Us
@@ -103,7 +109,7 @@ function AboutUs() {
               textAlign: "center",
               py: "20px",
               pb: "50px",
-              px: "20px",
+              px: { xs: "10px", md: "20px" }, 
             }}
           >
             Welcome to Aha Tiffins, where we serve delicious and authentic food
@@ -127,8 +133,8 @@ function AboutUs() {
             fontFamily="cursive"
             color="#F27F0C"
             sx={{
-              px: "40px",
-              pt: "60px",
+              px: { xs: "20px", md: "40px" }, 
+              pt: { xs: "30px", md: "60px" }, 
             }}
           >
             Why Choose Us ?
@@ -152,7 +158,7 @@ function AboutUs() {
               textAlign: "center",
               py: "20px",
               pb: "50px",
-              px: "20px",
+              px: { xs: "10px", md: "20px" }, 
             }}
           >
             Welcome to Aha Tiffins, where we serve delicious and authentic food
@@ -167,9 +173,8 @@ function AboutUs() {
             selection of fresh fruit juices, milkshakes, and smoothies. Join us
             for a taste of tradition and innovation crafted to perfection!
           </Typography>
-         
         </Box>
-        <Footers/>
+        <Footers />
       </Box>
     </ThemeProvider>
   );

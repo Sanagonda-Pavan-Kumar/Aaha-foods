@@ -82,9 +82,15 @@ sx={{
   display: 'flex',
   justifyContent:'center',
   alignItems: 'center', 
-  ml: `${drawerWidth}px`, 
+  ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  }, 
   px: 4,
-  pt: 5,
+  pt: {
+    xs: 12,
+    md: 5,
+  },
 }}
 >
 <Typography 
@@ -111,7 +117,10 @@ sx={{
 <Box
 sx={{
   px:'10px',
-  marginLeft: `${drawerWidth}px`, 
+  ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  }, 
   alignItems: 'center',
  pt:'60px',
  pb:'20px',
@@ -123,21 +132,31 @@ sx={{
     sx={{
       pb: "60px",
       px: "30px",
-      marginLeft: `${drawerWidth}px`,
+      ml: {
+        xs: 0,
+        md: `${drawerWidth}px`,
+      },
     }}
   >
     <Swiper
     modules={[Navigation, Pagination, Autoplay]}
-    slidesPerView={3}
     spaceBetween={0} 
-    loop={true}
-    navigation
+    loop={true} 
     autoplay={{
       delay: 1, 
       disableOnInteraction: false,
       pauseOnMouseEnter: true, 
     }}
     speed={3000} 
+    navigation
+    breakpoints={{
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    }}
   >
       <SwiperSlide>
         <Card
@@ -264,7 +283,10 @@ sx={{
   <Box
 sx={{
   px:'10px',
-  marginLeft: `${drawerWidth}px`, 
+  ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  }, 
   alignItems: 'center',
  pt:'10px',
  pb:'20px',
@@ -276,21 +298,31 @@ sx={{
     sx={{
       pb: "60px",
       px: "30px",
-      marginLeft: `${drawerWidth}px`,
+      ml: {
+        xs: 0,
+        md: `${drawerWidth}px`,
+      },
     }}
   >
-    <Swiper
+   <Swiper
     modules={[Navigation, Pagination, Autoplay]}
-    slidesPerView={3}
     spaceBetween={0} 
-    loop={true}
-    navigation
+    loop={true} 
     autoplay={{
       delay: 1, 
       disableOnInteraction: false,
       pauseOnMouseEnter: true, 
     }}
     speed={3000} 
+    navigation
+    breakpoints={{
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    }}
   >
       
     
@@ -479,7 +511,10 @@ sx={{
   <Box
   sx={{
     px: '10px',
-    marginLeft: `${drawerWidth}px`,
+    ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    },
     alignItems: 'center',
     pt: '10px',
     pb: '20px',
@@ -493,21 +528,31 @@ sx={{
   sx={{
     pb: '60px',
     px: '30px',
-    marginLeft: `${drawerWidth}px`,
+    ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    },
   }}
 >
-  <Swiper
+<Swiper
     modules={[Navigation, Pagination, Autoplay]}
-    slidesPerView={3}
     spaceBetween={0} 
-    loop={true}
-    navigation
+    loop={true} 
     autoplay={{
       delay: 1, 
       disableOnInteraction: false,
       pauseOnMouseEnter: true, 
     }}
     speed={3000} 
+    navigation
+    breakpoints={{
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+    }}
   >
     <SwiperSlide>
       <Card
@@ -616,7 +661,10 @@ sx={{
 <Box
   sx={{
     px: '10px',
-    marginLeft: `${drawerWidth}px`,
+    ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    },
     alignItems: 'center',
     pt: '10px',
     pb: '20px',
@@ -630,7 +678,10 @@ sx={{
   sx={{
     pb: '60px',
     px: '30px',
-    marginLeft: `${drawerWidth}px`,
+    ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    },
   }}
 >
   <Swiper
@@ -742,7 +793,10 @@ sx={{
 </Box>
 </Box>
 
-<Box sx={{ marginLeft: `${drawerWidth}px` }}>
+<Box sx={{  ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            },}}>
         <Footers />
       </Box>  
 

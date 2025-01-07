@@ -25,14 +25,23 @@ export const Grills = () => {
           elevation={0}
           sx={{
             width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            }, 
           }}
         />
         <Sider2 />
       </Box>
-      <Box sx={{ ml: `${drawerWidth}px` }}>
+      <Box sx={{ ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  },  }}>
       <MainSlides/></Box>
-      <Box sx={{ ml: `${drawerWidth}px` }}>
+      <Box sx={{ ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  }, }}>
    
      <Box>
      <Box

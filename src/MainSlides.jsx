@@ -1,11 +1,11 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react'; // Import Swiper and SwiperSlide
-import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'; // Import Swiper modules
-import { Typography } from '@mui/material'; // Import Typography from MUI
+import { Swiper, SwiperSlide } from 'swiper/react'; 
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'; 
+import { Typography } from '@mui/material'; 
 import img4 from './assets/k1.jpg'; 
-import wada from './assets/wada.jpg';
-import dosa from './assets/dosa.jpg';
-import idly from './assets/idly.jpg';
+import kebab from './assets/kebab.jpg';
+import kebabs1 from './assets/kebabs1.jpg';
+import fullbird from './assets/fullbird.jpg';
 
 const MainSlides = () => {
   return (
@@ -57,13 +57,13 @@ const MainSlides = () => {
               transform: 'translate(-50%, -50%)',
               zIndex: 2,
             }}>
-              <Typography sx={{ fontSize: '6rem', fontWeight: 'bold', color: 'grey' }}>
+              <Typography sx={{ fontSize: { xs: '3rem', sm: '2rem', md: '6rem' },  fontWeight: 'bold', color: 'grey' }}>
                 Welcome!
               </Typography>
-              <Typography sx={{ fontSize: '3rem', fontWeight: 'bold', color: 'grey', px: '170px' }}>
+              <Typography sx={{ fontSize: { xs: '2rem', sm: '2rem', md: '3rem' },  fontWeight: 'bold', color: 'grey',  px: { xs: '60px', md: '170px' }, }}>
                 To
               </Typography>
-              <Typography sx={{ fontSize: '3rem', fontFamily: 'cursive', color: 'rgb(255, 170, 0)', px: '70px' }}>
+              <Typography sx={{ fontSize: { xs: '2rem', sm: '2rem', md: '3rem' },  fontFamily: 'cursive', color: 'rgb(255, 170, 0)',  px: { xs: '10px', md: '70px' }, }}>
                 Aha-Foods
               </Typography>
             </div>
@@ -82,7 +82,7 @@ const MainSlides = () => {
             ></div>
 
             <img
-              src={dosa}
+              src={kebab}
               alt="Laknavaram Lake"
               style={{
                 width: '100%',
@@ -109,7 +109,7 @@ const MainSlides = () => {
             ></div>
 
             <img
-              src={idly}
+              src={kebabs1}
               alt="Laknavaram Lake"
               style={{
                 width: '100%',
@@ -135,7 +135,7 @@ const MainSlides = () => {
             ></div>
 
             <img
-              src={wada}
+              src={fullbird}
               alt="Laknavaram Lake"
               style={{
                 width: '100%',

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
-import menu1 from './assets/menu1.jpg';
-import menu2 from './assets/menu2.jpg';
-import menu3 from './assets/menu3.jpg';
+import menu1 from './assets/caterings1.png';
+import menu2 from './assets/caterings2.png';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -13,7 +12,7 @@ import Sider from './Sider';
 
 const drawerWidth = 300;
 
-export const Home2 = () => {
+export const AhaCaterings = () => {
   return (
     <div>
       <Sider />
@@ -31,7 +30,7 @@ export const Home2 = () => {
             px: 4,
             pt: {
               xs: 7,
-              md: 5,
+              md: 3,
             },
             pb: {
               xs: 3,
@@ -56,7 +55,7 @@ export const Home2 = () => {
              
             }}
           >
-            Aha-Tiffins
+            Aha-Caterings
           </Typography>
           <Typography
             variant="h4"
@@ -117,9 +116,9 @@ export const Home2 = () => {
                   alt="Menu 1"
                   style={{
                     width: '100%',
-                    maxWidth: '700px',
+                    maxWidth: '500px',
                     height: 'auto',
-                    maxHeight: '500px',
+                    maxHeight: '550px',
                     borderRadius: '10px',
                   }}
                 />
@@ -134,9 +133,9 @@ export const Home2 = () => {
                   alt="Menu 2"
                   style={{
                     width: '100%',
-                    maxWidth: '500px',
+                    maxWidth: '450px',
                     height: 'auto',
-                    maxHeight: '500px',
+                    maxHeight: '550px',
                     borderRadius: '10px',
                   }}
                 />
@@ -144,21 +143,8 @@ export const Home2 = () => {
             </SwiperSlide>
 
         
-            <SwiperSlide>
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <img
-                  src={menu3}
-                  alt="Menu 3"
-                  style={{
-                    width: '100%',
-                    maxWidth: '500px',
-                    height: 'auto',
-                    maxHeight: '510px',
-                    borderRadius: '10px',
-                  }}
-                />
-              </Box>
-            </SwiperSlide>
+          
+             
           </Swiper>
         </Box>
       </Box>

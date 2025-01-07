@@ -27,9 +27,19 @@ const GrillsMenu = () => {
     display: 'flex',
     justifyContent:'center',
     alignItems: 'center', 
-    ml: `${drawerWidth}px`, 
+    ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    },
     px: 4,
-    py: 4,
+    pt: {
+      xs: 12,
+      md: 4,
+    },
+    pb: {
+      xs: 3,
+      md: 4,
+    },
   }}
 >
   <Typography 
@@ -55,7 +65,10 @@ const GrillsMenu = () => {
 </Box>
  
 
-<Box sx={{ ml: `${drawerWidth}px`, display: 'flex', justifyContent: 'center' }}>
+<Box sx={{ ml: {
+      xs: 0,
+      md: `${drawerWidth}px`,
+    }, display: 'flex', justifyContent: 'center' }}>
   <Swiper
     modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
     spaceBetween={0}

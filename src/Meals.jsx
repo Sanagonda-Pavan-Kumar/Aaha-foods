@@ -33,8 +33,8 @@ const theme = createTheme({
 
 const imageStyle = {
   width: '100%',
-  height: '150px', // Set a fixed height for all images
-  objectFit: 'cover', // Ensures the image covers the area without distortion
+  height: '150px',
+  objectFit: 'cover', 
 };
 
 const Meals = () => {
@@ -50,9 +50,19 @@ const Meals = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            ml: `${drawerWidth}px`,
-            px: 4,
-            py: 5,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            },
+          px:{
+            xs:2,md:4
+          },
+          pt:{
+            xs:11,md:5
+          },
+          pb:{
+            xs:0,md:5
+          },
           }}
         >
           <Typography
@@ -61,6 +71,7 @@ const Meals = () => {
             fontWeight="bold"
             fontFamily="cursive"
             color="#F27F0C"
+            sx={{px:'1'}}
           >
             Aha- Meals
           </Typography>
@@ -78,7 +89,10 @@ const Meals = () => {
         <Box
           sx={{
             px: '10px',
-            marginLeft: `${drawerWidth}px`,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            },
             alignItems: 'center',
             pt: '60px',
             pb: '20px',
@@ -98,27 +112,37 @@ const Meals = () => {
         <Box
           sx={{
             px: '30px',
-            marginLeft: `${drawerWidth}px`,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            },
           }}
         >
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={3}
-            spaceBetween={0}
-            loop={true}
-            navigation
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            speed={3000}
-          >
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={0} 
+              loop={true} 
+              autoplay={{
+                delay: 1, 
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true, 
+              }}
+              speed={3000} 
+              navigation
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
             <SwiperSlide>
               <Card
                 hoverable
                 style={{
-                  width: 240, // Set the card width to match the Sambar Rice card
+                  width: 240, 
                 }}
                 cover={<img alt="parota" src={parota} style={imageStyle} />}
               >
@@ -205,7 +229,10 @@ const Meals = () => {
         <Box
           sx={{
             px: '10px',
-            marginLeft: `${drawerWidth}px`,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            },
             alignItems: 'center',
             pt: '60px',
             pb: '20px',
@@ -225,22 +252,32 @@ const Meals = () => {
         <Box
           sx={{
             px: '30px',
-            marginLeft: `${drawerWidth}px`,
+            ml: {
+              xs: 0,
+              md: `${drawerWidth}px`,
+            },
           }}
         >
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={3}
-            spaceBetween={0}
-            loop={true}
-            navigation
-            autoplay={{
-              delay: 1,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            speed={3000}
-          >
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={0} 
+              loop={true} 
+              autoplay={{
+                delay: 1, 
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true, 
+              }}
+              speed={3000} 
+              navigation
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
             <SwiperSlide>
               <Card
                 hoverable
@@ -381,7 +418,10 @@ const Meals = () => {
         </Box>
       
       </Box>
-      <Box sx={{ marginLeft: `${drawerWidth}px` }}>
+      <Box sx={{ ml: {
+    xs: 0,
+    md: `${drawerWidth}px`,
+  }, }}>
         <Footers />
       </Box>  
     </div>
