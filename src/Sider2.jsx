@@ -96,8 +96,14 @@ function Sider2() {
         <Box sx={{ mb: 1 }}>
           <FacebookIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer' }} />
           <TwitterIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer' }} />
-          <InstagramIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer' }} />
-        </Box>
+          <a 
+        href="https://www.instagram.com/aha.tiffins/profilecard/?igsh=MW1yZmxpbWJlcWo3NA==" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style={{ textDecoration: 'none' }} 
+      >
+        <InstagramIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer', color: 'white' }} />
+      </a>        </Box>
         <Box sx={{ fontSize: '14px', lineHeight: '1.5' }}>
           <p>Copyright © 2024 Aha-Foods.</p>
           <p>All Rights Reserved</p>

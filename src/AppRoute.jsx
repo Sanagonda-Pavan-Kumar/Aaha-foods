@@ -14,6 +14,7 @@ import ContactUs from './ContactUs';
 import ContactusGrills from './ContactusGrills';
 import { AhaCaterings } from './AhaCaterings';
 import { AhaCaterings2 } from './AhaCaterings2';
+import Contactuscat from './Contactuscat';
 export default function AppRoute() {
   return (
     <Router>
@@ -23,6 +24,7 @@ export default function AppRoute() {
         <Route path="/ahacaterings" element={<AhaCaterings />} />
         <Route path="/ahacaterings2" element={<AhaCaterings2 />} />
         <Route path="/contactus" element={<ContactUs/>} />
+        <Route path="/contactuscat" element={<Contactuscat/>} />
         <Route path="/contactusgrills" element={<ContactusGrills/>} />
         <Route path="/aboutusgrills" element={<AboutUsGrills />} />
         <Route path="/Menu" element={<Menu />} />

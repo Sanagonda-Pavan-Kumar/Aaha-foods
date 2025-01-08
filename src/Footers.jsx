@@ -1,7 +1,5 @@
 import React from 'react';
 import { Box, AppBar, createTheme, ThemeProvider, Typography } from '@mui/material';
-import {Header} from './Header'; 
-import Sider from './Sider'; 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 const drawerWidth = 300;
@@ -33,8 +31,14 @@ const Footers = () => {
             Copyright © 2024 Aha-Foods. All Rights Reserved
           </Typography>
           <Box sx={{px:'20px'}}>
-          <InstagramIcon sx={{ color: 'white' , marginRight: 2}} />
-          <FacebookIcon sx={{ color: 'white' }} />
+          <a 
+        href="https://www.instagram.com/aha.tiffins/profilecard/?igsh=MW1yZmxpbWJlcWo3NA==" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style={{ textDecoration: 'none' }} 
+      >
+        <InstagramIcon sx={{ margin: '0 10px', fontSize: '24px', cursor: 'pointer', color: 'white' }} />
+      </a>           <FacebookIcon sx={{ color: 'white' }} />
           </Box>
         </Box>
         <Box sx={{ backgroundColor: 'black', display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 2 }}>
