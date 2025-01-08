@@ -1,7 +1,8 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
-import menu1 from './assets/caterings1.png';
-import menu2 from './assets/caterings2.png';
+import menu1 from './assets/nonveg1.png';
+import menu2 from './assets/nonveg2.png';
+import menu3 from './assets/nonveg3.png';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -13,7 +14,7 @@ import Sider3 from './Sider3';
 
 const drawerWidth = 300;
 
-export const AhaCaterings = () => {
+export const AhaCaterings2 = () => {
   return (
     <div>
       <Sider3 />
@@ -137,10 +138,21 @@ export const AhaCaterings = () => {
                 />
               </Box>
             </SwiperSlide>
-
-        
-          
-             
+            <SwiperSlide>
+              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                <img
+                  src={menu3}
+                  alt="Menu 2"
+                  style={{
+                    width: '100%',
+                    maxWidth: '450px',
+                    height: 'auto',
+                    maxHeight: '550px',
+                    borderRadius: '10px',
+                  }}
+                />
+              </Box>
+            </SwiperSlide>
           </Swiper>
         </Box>
       </Box>

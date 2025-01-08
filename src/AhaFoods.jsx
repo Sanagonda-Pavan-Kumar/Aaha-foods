@@ -13,6 +13,7 @@ import dosa3 from './assets/wada12.jpg';
 import vegbiryani1 from './assets/vegbiryani1.jpg';
 import grillleg from './assets/grillleg.jpg';
 import Footers from './Footers';
+import logo from './assets/aha-logo.png';
 
 const AhaFoods = () => {
   const navigate = useNavigate();
@@ -45,9 +46,14 @@ const AhaFoods = () => {
 
   return (
     <Box sx={{ background: 'linear-gradient(to bottom right, #FFF4E5, #FFD9D9)', padding: 0, overflow: 'hidden' }}>
-      <Typography variant="h3" component="h1" sx={{ textAlign: 'center', marginBottom: 4, color: '#FF8C00',fontWeight:'bold',fontFamily:'proxima Nova'}}> 
-        Aha-Foods
-      </Typography>
+     
+      <Box sx={{ textAlign: 'center' }}>
+        <img 
+          src={logo} 
+          alt="Aha Foods Logo"
+          style={{ width: '200px', height: 'auto' }} 
+        />
+      </Box>
       <Grid container spacing={0}>
         {cardData.map((card, index) => (
           <Grid item xs={12} sm={4} key={index}>
